@@ -1,4 +1,10 @@
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(9, 11, 16, 0.72);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid var(--line);
 }
 
@@ -6,15 +12,18 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding-block: 20px;
+  gap: 8px 24px;
+  padding-block: 14px;
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: auto;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 20px;
+  font-size: 19px;
   letter-spacing: -0.01em;
   color: var(--ink);
   text-decoration: none;
@@ -24,10 +33,23 @@
   color: var(--ink);
 }
 
+.mark {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: #0b0d14;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 0 24px var(--accent-glow);
+}
+
 .nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 24px;
+  gap: 4px 24px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -36,13 +58,60 @@
 
 .link {
   display: inline-block;
-  padding: 10px 0;
+  padding: 8px 0;
   color: var(--ink-soft);
   text-decoration: none;
+  transition: color 0.15s ease;
 }
 
 .link:hover {
   color: var(--ink);
   text-decoration: underline;
-  text-underline-offset: 4px;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 6px;
+}
+
+.social {
+  display: flex;
+  gap: 6px;
+}
+
+.icon {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.icon:hover {
+  color: var(--ink);
+  border-color: var(--line-strong);
+  background: var(--surface-2);
+}
+
+/* Phones: brand + icons on top, section links as a full-width row underneath. */
+@media (max-width: 720px) {
+  .social {
+    order: 2;
+  }
+
+  .navWrap {
+    order: 3;
+    flex-basis: 100%;
+    border-top: 1px solid var(--line);
+    padding-top: 4px;
+  }
+
+  .nav {
+    justify-content: space-between;
+    gap: 4px 12px;
+  }
+
+  .link {
+    padding: 8px 0;
+  }
 }

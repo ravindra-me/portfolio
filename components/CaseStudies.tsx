@@ -7,8 +7,11 @@ function Card({ study, index }: { study: CaseStudy; index: number }) {
   return (
     <article className={styles.card} aria-labelledby={`cs-${study.id}`}>
       <div className={styles.side}>
+        <span className={styles.number} aria-hidden="true">
+          {number}
+        </span>
         <p className={styles.meta}>
-          {number} · {study.company} · {study.period}
+          {study.company} · {study.period}
         </p>
         <h3 id={`cs-${study.id}`} className={styles.title}>
           {study.title}
@@ -17,14 +20,14 @@ function Card({ study, index }: { study: CaseStudy; index: number }) {
       <div className={styles.body}>
         {study.problem && (
           <p>
-            <strong>Problem.</strong> {study.problem}
+            <strong className={styles.label}>Problem</strong> {study.problem}
           </p>
         )}
         <p>
-          <strong>What I did.</strong> {study.action}
+          <strong className={styles.label}>What I did</strong> {study.action}
         </p>
-        <p>
-          <strong>Result.</strong> {study.result}
+        <p className={styles.result}>
+          <strong className={styles.label}>Result</strong> {study.result}
         </p>
         <ul className={styles.tags} aria-label="Technologies">
           {study.tags.map((tag) => (

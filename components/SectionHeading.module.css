@@ -3,9 +3,12 @@
 }
 
 .kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-family: var(--font-mono);
-  font-size: 14px;
-  color: var(--ink-muted);
+  font-size: 13px;
+  color: var(--accent);
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -16,4 +19,11 @@
   letter-spacing: -0.02em;
   line-height: 1.15;
   margin-top: 8px;
+}
+
+.kicker::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
 }
