@@ -1,0 +1,26 @@
+.section {
+  padding-top: 72px;
+  padding-bottom: 40px;
+  scroll-margin-top: 16px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.group {
+  flex: 1 1 240px;
+}
+
+.name {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.items {
+  color: var(--ink-soft);
+}

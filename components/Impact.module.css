@@ -1,0 +1,33 @@
+.band {
+  background: var(--surface);
+  border-block: 1px solid var(--line);
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-block: 0;
+  padding-block: 40px;
+}
+
+.item {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.value {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.label {
+  font-size: 15px;
+  color: var(--ink-soft);
+  margin-top: 10px;
+}
